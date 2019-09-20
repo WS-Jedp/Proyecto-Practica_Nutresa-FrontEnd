@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1935" height="193" viewBox="0 0 1935 193">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #27b265;
+        fill-rule: evenodd;
+        filter: url(#filter);
+      }
+    </style>
+    <filter id="filter" x="-7" y="-2" width="1935" height="193" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" dx="3.152" dy="2.463" in="SourceAlpha"/>
+      <feGaussianBlur result="blur" stdDeviation="2.828"/>
+      <feFlood result="flood" flood-color="#818181"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path id="Rectángulo_3" data-name="Rectángulo 3" class="cls-1" d="M4,5H1924V182.605S1456.07,145,982.217,145C496.222,145,4,182.605,4,182.605V5Z"/>
+</svg>

@@ -1,0 +1,58 @@
+footer figure{
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  background-color: white;
+  bottom: -40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 1px 6px 2px rgba(0,0,0,0.1);
+  border: solid 3px #fcfc4b;
+}
+
+footer .redes a{
+  margin: 1rem;
+}
+
+.redes a{
+  text-decoration: none;
+  color: #171717;
+  font-size: 1.4rem;
+}
+
+.redes .btn-lineF{
+  width: 0px;
+  height: 0.1rem;
+  background-color: rgba(0,0,0,0);
+}
+
+.redes a:hover{
+  text-decoration: none;
+  color: #27b265;
+}
+
+.redes a:hover .btn-lineF{
+  transition: 0.3s ease;
+  width: 100%;
+  height: 0.1rem;
+  background-color: #27b265;
+}
+
+.fondo-footer{
+  width: 100%;
+  height: 5vh;
+  background-color: #fcfc4b;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.footer-curva{
+  width: 120%;
+  height: 10vh;
+  background-color: white;
+  border-radius: 40%;
+  box-shadow:inset 0px -5px 12px -3px rgba(0,0,0,0.1);
+}

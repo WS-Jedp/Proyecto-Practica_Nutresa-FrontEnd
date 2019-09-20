@@ -1,0 +1,89 @@
+.btns-nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.4rem;
+}
+
+header a{
+  margin: auto 2rem;
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+header{
+  padding: 0 !important;
+  height: 80px;
+  align-items: center;
+}
+
+header a:hover{
+  color: #fcfc4b;
+  transition: 0.4s ease-out;
+}
+
+header a:hover .btn-line{
+  transition: 0.4s;
+  width: 120%;
+  height: 0.1rem;
+  background-color: yellow;
+}
+
+.btn-line{
+  width: 0px;
+  height: 0.1rem;
+  background-color: rgba(0,0,0,0);
+}
+
+.logo{
+  position: relative;
+  z-index: 3;
+}
+
+
+nav{
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  background-color: white;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 1px 2px 0px 0px rgba(0, 0, 0, 0.08);
+  border: solid 3px #27b265;
+}
+
+.fondo{
+  width: 100%;
+  height: 8vh;
+  background-color: red;
+  background-color: #27b265;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  margin-bottom: 10rem;
+}
+
+.inicio{
+  width: 120%;
+  height: 10vh;
+  background-color: white;
+  border-radius: 60%;
+  box-shadow: inset -3px 6px 6px 0px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 80px;
+  z-index: 2;
+  padding: 0 !important;
+  margin: 0 !important;
+}

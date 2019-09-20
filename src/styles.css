@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+/*
+Colores =>
+Verde => #27b265
+Amarillo => #fcfc4b
+Negro => #171717
+*/
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+.bg-green{
+  background-color: #27b265;
+}
+.txt-green{
+  color: #27b265;
+}
+
+.bg-yellow{
+  background-color: #fcfc4b;
+}
+.txt-yellow{
+  color: #fcfc4b;
+}
+
+.bg-white{
+  background-color: white;
+}
+.txt-white{
+  color: white;
+}
+
+.section-body{
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0 !important;
+  padding: 0 !important;
+}
