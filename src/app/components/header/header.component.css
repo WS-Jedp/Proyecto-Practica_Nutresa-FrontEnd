@@ -72,12 +72,11 @@ nav{
   justify-content: center;
   align-items: flex-end;
   overflow: hidden;
-  margin-bottom: 10rem;
 }
 
 .inicio{
   width: 120%;
-  height: 10vh;
+  height: 12vh;
   background-color: white;
   border-radius: 60%;
   box-shadow: inset -3px 6px 6px 0px rgba(0, 0, 0, 0.1);
