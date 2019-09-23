@@ -1,0 +1,61 @@
+menu-admin{
+  position: relative;
+  width: 30%;
+  flex-direction: row;
+}
+
+menu{
+  width: 35%;
+  height: 100vh;
+  padding: 2.4rem;
+  padding-top: 4rem;
+  box-shadow: 1px 3px 7px 4px rgba(0,0,0,0.2);
+  z-index: 2;
+  position: relative;
+  top: -7vh;
+}
+
+.fondoMenu{
+  width: 50px;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: -7vh;
+  left: -10px;
+  z-index: 4;
+}
+
+.curvaMenu{
+  width: 90px;
+  height: 100vh;
+  background-color: white;
+  border-radius: 100%;
+  box-shadow: inset 7px 2px 8px 1px rgba(0,0,0,0.1);
+}
+
+nav a{
+  font-size: 2.2rem;
+  padding: 0.2rem 2.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+menu nav a .btn-lineMenu{
+  width: 0px;
+  height: 6px;
+  background-color: #27b265;
+}
+
+menu nav a:hover{
+  color: #27b265;
+}
+
+menu nav a:hover .btn-lineMenu{
+  transition: 0.3s ease-out;
+  width: 20px;
+}

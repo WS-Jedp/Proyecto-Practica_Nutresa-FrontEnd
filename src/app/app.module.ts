@@ -13,6 +13,7 @@ import { IndexComponent } from './components/outlet/index/index.component';
 import { ContactComponent } from './components/outlet/contact/contact.component';
 import { IngresarComponent } from './components/outlet/ingresar/ingresar.component';
 import { AdminMenuComponent } from './components/admin/admin-menu/admin-menu.component';
+import { AdminHeaderComponent } from './components/admin/admin-header/admin-header.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AdminMenuComponent } from './components/admin/admin-menu/admin-menu.com
     IndexComponent,
     ContactComponent,
     IngresarComponent,
-    AdminMenuComponent
+    AdminMenuComponent,
+    AdminHeaderComponent
   ],
   imports: [
     BrowserModule,
