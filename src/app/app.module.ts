@@ -14,6 +14,7 @@ import { ContactComponent } from './components/outlet/contact/contact.component'
 import { IngresarComponent } from './components/outlet/ingresar/ingresar.component';
 import { AdminMenuComponent } from './components/admin/admin-menu/admin-menu.component';
 import { AdminHeaderComponent } from './components/admin/admin-header/admin-header.component';
+import { AppAdminComponentComponent } from './components/admin/app-admin-component/app-admin-component.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AdminHeaderComponent } from './components/admin/admin-header/admin-head
     ContactComponent,
     IngresarComponent,
     AdminMenuComponent,
-    AdminHeaderComponent
+    AdminHeaderComponent,
+    AppAdminComponentComponent
   ],
   imports: [
     BrowserModule,

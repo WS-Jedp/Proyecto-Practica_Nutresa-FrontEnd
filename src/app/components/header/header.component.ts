@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+//servicios
+import {UserServicesService} from '../../services/usuario/user-services.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  auth:boolean = false;
+
+  constructor(private userService:UserServicesService) {
+      console.log('hola');
+   }
 
   ngOnInit() {
+
+    if(localStorage.getItem('token') != ''){
+      this.userService.validacion();
+    }
+
   }
 
 }

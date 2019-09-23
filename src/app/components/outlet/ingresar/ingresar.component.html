@@ -1,7 +1,7 @@
 <section class="d-flex flex-column flex-column w-100 justify-content-center align-items-center ingresar">
-  <form class="#" method="post">
-      <input type="text" required name="user" placeholder="Ingresa tu nombre de usuario">
-      <input type="password" required name="password" placeholder="Ingresa tu contraseña">
+  <form (ngSubmit)="loginUser(data)" #data="ngForm" method="post">
+      <input type="text" required ngModel name="username" placeholder="Ingresa tu nombre de usuario">
+      <input type="password" required ngModel name="password" placeholder="Ingresa tu contraseña">
       <input type="submit" name="" value="Ingresar">
   </form>
 </section>
