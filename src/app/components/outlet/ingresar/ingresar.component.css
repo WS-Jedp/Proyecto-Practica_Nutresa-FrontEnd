@@ -1,0 +1,47 @@
+.ingresar{
+  width: 100%;
+  min-height: 100vh;
+
+}
+
+.ingresar form{
+  display: flex;
+  flex-direction: column;
+}
+
+.ingresar form input[type="text"]{
+  margin-bottom: 2rem;
+}
+.ingresar form input[type="password"]{
+  margin-bottom: 2rem;
+}
+
+input[type="text"]{
+  border: none;
+  border-bottom: 3px solid #27b265;
+  width: 500px;
+  text-align: center;
+}
+
+input[type="password"]{
+  border: none;
+  border-bottom: 3px solid #27b265;
+  width: 500px;
+  text-align: center;
+}
+
+input[type="submit"]{
+  background-color: #27b265;
+  width: 250px;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  align-self: center;
+}
+
+input[type="submit"]:hover{
+    transition: 0.3s ease-out;
+    box-shadow: 1px 2px 1px 1px rgba(0,0,0,0.2);
+    color: #fcfc4b;
+}

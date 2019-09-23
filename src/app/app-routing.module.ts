@@ -10,7 +10,8 @@ import {IngresarComponent} from '../app/components/outlet/ingresar/ingresar.comp
 const routes: Routes = [
   {path: 'inicio', component: IndexComponent},
   {path: 'contacto', component: ContactComponent },
-  {path: 'ingresar', component: IngresarComponent}
+  {path: 'ingresar', component: IngresarComponent},
+  {path: '', component: IndexComponent}
 ]
 
 @NgModule({

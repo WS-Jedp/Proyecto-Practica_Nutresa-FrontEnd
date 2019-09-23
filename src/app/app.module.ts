@@ -12,6 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { IndexComponent } from './components/outlet/index/index.component';
 import { ContactComponent } from './components/outlet/contact/contact.component';
 import { IngresarComponent } from './components/outlet/ingresar/ingresar.component';
+import { AdminMenuComponent } from './components/admin/admin-menu/admin-menu.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { IngresarComponent } from './components/outlet/ingresar/ingresar.compone
     FooterComponent,
     IndexComponent,
     ContactComponent,
-    IngresarComponent
+    IngresarComponent,
+    AdminMenuComponent
   ],
   imports: [
     BrowserModule,
