@@ -1,11 +1,21 @@
+.adminView{
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
 menu-admin{
   position: relative;
   width: 30%;
+  max-width: 30%;
+  box-sizing: border-box;
   flex-direction: row;
 }
 
 menu{
-  width: 35%;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   height: 100vh;
   padding: 2.4rem;
   padding-top: 4rem;
@@ -35,8 +45,8 @@ menu{
 }
 
 nav a{
-  font-size: 2.2rem;
-  padding: 0.2rem 2.8rem;
+  font-size: 2rem;
+  padding: 1rem;
   font-weight: bold;
   text-decoration: none;
   display: flex;
@@ -55,13 +65,19 @@ menu nav a:hover{
   color: #27b265;
 }
 
-menu nav a:hover .btn-lineMenu{
+menu nav a:hover  div{
   transition: 0.3s ease-out;
   width: 20px;
 }
 
 .outlet-admin{
-  width: 75%;
+  min-width: 65%;
   min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: auto;
+  align-self: center;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }

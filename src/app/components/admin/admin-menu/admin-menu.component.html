@@ -1,3 +1,5 @@
+<section class="d-flex flex-row adminView" *ngIf="auth">
+
 <section class="d-flex flex-row menu-admin">
   <menu class="d-flex bg-yellow txt-green">
     <nav class="d-flex flex-column align-items-center justify-content-center">
@@ -14,6 +16,8 @@
   </div>
 </section>
 
-<section class="outlet-admin">
-  Hola
+<article class="outlet-admin">
+  <router-outlet></router-outlet>
+</article>
+
 </section>

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminHeaderComponent implements OnInit {
 
+  authHeader:boolean = false;
   constructor() { }
 
   ngOnInit() {

@@ -30,7 +30,7 @@ export class IngresarComponent implements OnInit {
       (resp:LoginUserInterface)=>{
         console.log(resp.Mensaje);
         localStorage.setItem('token', (resp.token));
-        this.router.navigate(['adminNutresa']);
+        this.router.navigate(['admin']);
       }, err => {},
     )
   }

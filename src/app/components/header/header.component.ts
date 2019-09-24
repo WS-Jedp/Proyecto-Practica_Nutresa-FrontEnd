@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 //servicios
-import {UserServicesService} from '../../services/usuario/user-services.service';
+// import {UserServicesService} from '../../services/usuario/user-services.service';
 
 @Component({
   selector: 'app-header',
@@ -10,16 +10,18 @@ import {UserServicesService} from '../../services/usuario/user-services.service'
 })
 export class HeaderComponent implements OnInit {
 
-  auth:boolean = false;
+  authHeader:boolean = true;
 
-  constructor(private userService:UserServicesService) {
-      console.log('hola');
+  constructor() {
+
    }
 
   ngOnInit() {
 
-    if(localStorage.getItem('token') != ''){
-      this.userService.validacion();
+    if(!localStorage.getItem('token')){
+      this.authHeader = true;
+    }else{
+      this.authHeader = false;
     }
 
   }

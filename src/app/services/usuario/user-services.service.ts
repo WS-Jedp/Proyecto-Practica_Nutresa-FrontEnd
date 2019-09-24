@@ -3,6 +3,9 @@ import { Injectable } from '@angular/core';
 //Suscribirse Servicios
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
+//Interfaces
+import {ErrorUnuauthorized} from '../../interfaces/errores/error-unuauthorized';
+
 
 
 @Injectable({
@@ -39,19 +42,21 @@ export class UserServicesService {
     return this.http.get(
       this.url + 'validacionToken',
       {
-        headers: this.headers
+        headers: this.headers = new HttpHeaders({
+          'Authorization': 'Bearer ' + localStorage.getItem('token')
+        })
       });
   }
 
   //MenuAdmin
   validacion(){
     this.validateUser().subscribe(
-      (resp)=>{
-        console.log(resp);
+      (resp:ErrorUnuauthorized)=>{
+        console.log(resp.error);
         if(resp.error != '' || resp.error != null){
-          this.auth = true;
-        }else{
           this.auth = false;
+        }else{
+          this.auth = true;
         }
       }
     )
