@@ -13,4 +13,8 @@ export class AdminHeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  logOut(){
+    localStorage.removeItem('token')
+  }
+
 }
