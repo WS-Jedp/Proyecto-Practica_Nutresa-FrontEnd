@@ -1,2 +1,15 @@
-<p>productos-admin works!
-</p>
+<section>
+
+  <div *ngIf="isLoading; else showProductos">
+      Cargando...
+  </div>
+
+<ng-template #showProductos>
+  <article *ngFor="let producto of productos">
+
+    <h4>{{producto.nombre}}</h4>
+
+  </article>
+</ng-template>
+
+</section>

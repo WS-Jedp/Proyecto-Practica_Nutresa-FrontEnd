@@ -17,6 +17,7 @@ import { AdminHeaderComponent } from './components/admin/admin-header/admin-head
 import { AppAdminComponentComponent } from './components/admin/app-admin-component/app-admin-component.component';
 import { MainHeaderComponent } from './components/main-header/main-header.component';
 import { ProductosAdminComponent } from './components/admin/outlet/productos-admin/productos-admin.component';
+import { ClientesAdminComponent } from './components/admin/outlet/clientes-admin/clientes-admin.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProductosAdminComponent } from './components/admin/outlet/productos-adm
     AdminHeaderComponent,
     AppAdminComponentComponent,
     MainHeaderComponent,
-    ProductosAdminComponent
+    ProductosAdminComponent,
+    ClientesAdminComponent
   ],
   imports: [
     BrowserModule,

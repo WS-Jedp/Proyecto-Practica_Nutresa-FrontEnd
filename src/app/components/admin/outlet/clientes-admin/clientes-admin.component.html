@@ -1,0 +1,12 @@
+<section>
+  <div *ngIf="isLoading; else showClientes">
+    Cargando...
+  </div>
+
+  <ng-template #showClientes>
+    <div *ngFor="let cliente of clientes">
+        <h5> {{cliente.marca}} </h5>
+
+    </div>
+</ng-template>
+</section>

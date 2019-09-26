@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 //Servicios
 import {ProductoService} from '../../../../services/productos/producto.service';
+// import {UserServicesService} from '../../../../services/usuario/user-services.service';
 
 //Interfaces
-import {UserServicesService} from '../../../../services/usuario/user-services.service';
+import {AllProductos} from '../../../../interfaces/productos/all-productos';
 
 
 @Component({
@@ -12,24 +13,36 @@ import {UserServicesService} from '../../../../services/usuario/user-services.se
   templateUrl: './productos-admin.component.html',
   styleUrls: ['./productos-admin.component.css']
 })
+
 export class ProductosAdminComponent implements OnInit {
 
-  productos:any = null;
-  producto:any = null;
+  authHeader:boolean = true;
 
-  constructor(private productosService:ProductoService,private userService:UserServicesService) { }
+  productos:any;
+  producto:any;
+
+  isLoading:boolean;
+
+  constructor(private productosService:ProductoService) {
+
+
+      this.isLoading = true;
+   }
 
   ngOnInit() {
+    // Conseguir todos los prodructos
     this.productosService.getProducts().subscribe(
-      (resp)=>{
-        console.log(resp.Productos);
+      (resp:AllProductos)=>{
+        console.log('getProductos', resp);
         this.productos = resp.Productos;
+        this.isLoading = false;
       });
 
+    //Conseguir Un prodcuto
     this.productosService.getProduct(1).subscribe(
       (resp)=>{
-        console.log('getProduct', resp.Producto);
-        this.producto = resp.Producto;
+        console.log('getProduct', resp);
+        this.producto = resp;
       }
     )
 
