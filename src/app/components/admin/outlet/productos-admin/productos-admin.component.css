@@ -1,0 +1,13 @@
+.productos{
+  width: 40%;
+  min-height: 200px;
+  border: solid 2px black;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.productos div{
+  border-bottom: solid 1px black;
+  width: 100%;
+}
