@@ -1,0 +1,40 @@
+<section class="d-flex flex-column w-100 justify-content-center align-items-center">
+
+  <div *ngIf="isLoading; else showCliente">
+    Cargando...
+  </div>
+
+  <ng-template #showCliente>
+  <h2>Cliente</h2>
+
+  <article class="d-flex fjustify-content-center align-items-center">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Marca</th>
+            <th scope="col">categoria</th>
+            <th scope="col">NIT</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Valor de descuento</th>
+            <th scope="col">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{Cliente.id}}</td>
+            <td>{{Cliente.marca}}</td>
+            <td>{{Cliente.categoria}}</td>
+            <td>{{Cliente.NIT}}</td>
+            <td>{{Cliente.telefono}}</td>
+            <td>{{Cliente.valor}}%</td>
+            <td>Eliminar</td>
+          </tr>
+        </tbody>
+
+      </table>
+  </article>
+
+  <a routerLink="/admin/clientes">Volver</a>
+  </ng-template>
+</section>

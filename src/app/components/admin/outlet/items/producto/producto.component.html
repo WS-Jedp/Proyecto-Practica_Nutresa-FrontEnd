@@ -1,1 +1,42 @@
-<p>producto works!</p>
+<section class="d-flex flex-column justify-content-center align-items-center">
+
+  <div *ngIf="isLoading; else showProducto">
+    Cargando...
+  </div>
+
+  <ng-template #showProducto>
+    <h2>Nombre de Producto</h2>
+    <article>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Marca</th>
+              <th scope="col">cantidad</th>
+              <th scope="col">Eliminar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{producto.id}}</td>
+              <td>{{producto.nombre}}</td>
+              <td>{{producto.precio}}</td>
+              <td>{{producto.marca}}</td>
+              <td>{{producto.cantidad}}</td>
+              <td>
+                <a href="#">Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+
+
+    </article>
+
+    <a routerLink="/admin/productos">Volver</a>
+  </ng-template>
+
+</section>

@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import {ActivatedRoute} from '@angular/router';
+
+import {OneProduct} from '../../../../../interfaces/productos/one-product';
+import {ProductoService} from '../../../../../services/productos/producto.service';
+
 @Component({
   selector: 'app-producto',
   templateUrl: './producto.component.html',
@@ -7,7 +12,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductoComponent implements OnInit {
 
-  constructor() { }
+  isLoading:boolean;
+  idProducto:number;
+
+  producto:object;
+
+  constructor(private productoApi:ProductoService, private route:ActivatedRoute) {
+
+    this.isLoading = true;
+    this.idProducto = route.params.value.id;
+
+    productoApi.getProduct(this.idProducto).subscribe(
+      (resp:OneProduct)=>{
+        this.producto = resp.Producto;
+        this.isLoading = false;
+      }
+    )
+
+  }
 
   ngOnInit() {
   }

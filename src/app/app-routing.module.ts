@@ -14,6 +14,7 @@ import {FacturasComponent} from '../app/components/admin/outlet/facturas/factura
 //Items
 import {ProductoComponent} from './components/admin/outlet/items/producto/producto.component';
 import {CategoriaComponent} from './components/admin/outlet/items/categoria/categoria.component';
+import {ClienteComponent} from './components/admin/outlet/items/cliente/cliente.component';
 //Variable que permite las rutas dinamicas
 const routes: Routes = [
   {path: 'inicio', component: IndexComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
     {path: 'productos', component: ProductosAdminComponent},
     {path:'productos/:id', component:ProductoComponent},
     {path: 'clientes', component: ClientesAdminComponent},
+    {path: 'clientes/:id', component: ClienteComponent},
     {path: 'categorias', component:CategoriasAdminComponent},
     {path: 'categorias/:id', component:CategoriaComponent},
     {path: 'facturas', component: FacturasComponent},

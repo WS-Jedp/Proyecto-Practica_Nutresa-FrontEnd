@@ -38,14 +38,6 @@ export class ProductosAdminComponent implements OnInit {
         this.isLoading = false;
       });
 
-    //Conseguir Un prodcuto
-    this.productosService.getProduct(1).subscribe(
-      (resp)=>{
-        console.log('getProduct', resp);
-        this.producto = resp;
-      }
-    )
-
   }
 
 

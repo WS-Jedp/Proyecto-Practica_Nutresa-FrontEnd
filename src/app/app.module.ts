@@ -22,6 +22,7 @@ import { ProductoComponent } from './components/admin/outlet/items/producto/prod
 import { CategoriasAdminComponent } from './components/admin/outlet/categorias-admin/categorias-admin.component';
 import { CategoriaComponent } from './components/admin/outlet/items/categoria/categoria.component';
 import { FacturasComponent } from './components/admin/outlet/facturas/facturas.component';
+import { ClienteComponent } from './components/admin/outlet/items/cliente/cliente.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { FacturasComponent } from './components/admin/outlet/facturas/facturas.c
     CategoriasAdminComponent,
     CategoriaComponent,
     FacturasComponent,
+    ClienteComponent,
   ],
   imports: [
     BrowserModule,
