@@ -44,3 +44,28 @@ body{
   margin: 0 !important;
   padding: 0 !important;
 }
+
+.tableItems{
+  min-width: 80%;
+}
+
+.btnAgregar{
+  margin-top: 2rem;
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #27b265;
+  border-radius: 20px;
+  color: #27b265;
+  text-decoration: none;
+}
+
+
+.btnAgregar:hover {
+  text-decoration: none;
+  transition: 0.3s ease-out;
+  background-color: #27b265;
+  color: white;
+}

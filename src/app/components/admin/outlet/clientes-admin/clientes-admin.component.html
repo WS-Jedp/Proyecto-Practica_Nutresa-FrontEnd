@@ -1,12 +1,40 @@
-<section>
+<section class="d-flex flex-column justify-content-center align-items-center">
   <div *ngIf="isLoading; else showClientes">
     Cargando...
   </div>
 
   <ng-template #showClientes>
-    <div *ngFor="let cliente of clientes">
-        <h5> {{cliente.marca}} </h5>
 
-    </div>
+    <h2>Clientes</h2>
+
+    <article class="d-flex flex-row justify-content-around align-items-center w-100">
+
+      <table class="table w-100 tableItems">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">NIT</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of clientes; index as i">
+      <th scope="row">{{i+1}}</th>
+      <td>{{cliente.marca}}</td>
+      <td>{{cliente.telefono}}</td>
+      <td>{{cliente.NIT}}</td>
+      <td>
+        <a href="#">Ver más</a>
+        <a href="#">Editar</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+  </article>
+  <a href="#" class="btnAgregar">Agregar Cliente</a>
 </ng-template>
 </section>

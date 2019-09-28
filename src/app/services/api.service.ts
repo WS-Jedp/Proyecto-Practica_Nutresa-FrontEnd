@@ -17,6 +17,8 @@ export class ApiService {
     })
   }
 
+  // ------------------- Clientes
+
   // Conseguir todos los clientes
   getClients(){
     return this.http.get(
@@ -38,6 +40,71 @@ export class ApiService {
           'Authorization': 'Bearer ' + localStorage.getItem('token')
         })
       }
-    )
+    )}
+
+    // ------------------- Facturas
+
+    // Conseguir Facturas
+    getFacturas(){
+      this.putHeaders();
+      return this.http.get(
+        this.url + 'Facturas',
+        {
+          headers: this.headers = new HttpHeaders({
+            'Authorization': 'Bearer ' + localStorage.getItem('token')
+          })
+        })
+    }
+
+
+  // Conseguir Factura
+  getFactura(id){
+    this.putHeaders();
+    return this.http.get(
+      this.url + 'Facturas/'+id,
+      {
+        headers: this.headers = new HttpHeaders({
+          'Authorization': 'Bearer ' + localStorage.getItem('token')
+        })
+      })
   }
+
+
+  // ------------- Categorias
+
+  getCategorias(){
+    this.putHeaders();
+    return this.http.get(
+      this.url + 'Categorias',
+      {
+        headers: this.headers = new HttpHeaders({
+          'Authorization': 'Bearer ' + localStorage.getItem('token')
+        })
+      })
+  }
+
+  getCategoria(id){
+    this.putHeaders();
+    return this.http.get(
+      this.url + 'Categoria/'+id,
+      {
+        headers: this.headers = new HttpHeaders({
+          'Authorization': 'Bearer ' + localStorage.getItem('token')
+        })
+      })
+  }
+
+
+  getCategoriaCliente(id){
+    this.putHeaders();
+    return this.http.get(
+      this.url + 'Categorias/'+id,
+      {
+        headers: this.headers = new HttpHeaders({
+          'Authorization': 'Bearer ' + localStorage.getItem('token')
+        })
+      })
+  }
+
+
 }

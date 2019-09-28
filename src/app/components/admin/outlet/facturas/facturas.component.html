@@ -1,0 +1,36 @@
+<section class="d-flex flex-column justify-content-center align-items-center">
+
+  <div *ngIf="isLoading; else showFacturas">
+    Cargando...
+  </div>
+
+
+<ng-template #showFacturas>
+  <h2>Facturas</h2>
+  <article>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Factura</th>
+          <th scope="col">Usuario de la factura</th>
+          <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let factura of facturas; index as i">
+        <td>{{factura.id}}</td>
+        <td>{{factura.factura_compra_id}}</td>
+        <td>{{factura.tbl_usuario_id}}</td>
+        <td>
+          <a routerLink="{{factura.id}}">Ver más</a>
+          <a>Editar</a>
+        </td>
+      </tr>
+    </tbody>
+
+    </table>
+  </article>
+</ng-template>
+
+</section>

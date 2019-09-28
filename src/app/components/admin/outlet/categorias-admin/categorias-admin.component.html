@@ -1,0 +1,33 @@
+<section class="d-flex justify-content-center align-items-center flex-column">
+
+  <div *ngIf='isLoading; else showCategorias'>
+    Cargando...
+  </div>
+
+  <ng-template #showCategorias>
+
+    <h2>Categorias</h2>
+      <article>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Categoria</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let categoria of categorias; index as i">
+              <td scoper="row">{{categoria.id}}</td>
+              <td scoper="row">{{categoria.categoria}}</td>
+              <td scoper="row">
+                <a routerLink="{{categoria.id}}">Ver más</a>
+                <a href="">Editar</a>
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+      </article>
+  </ng-template>
+</section>

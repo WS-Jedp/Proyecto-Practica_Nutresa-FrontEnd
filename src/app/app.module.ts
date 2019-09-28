@@ -18,6 +18,10 @@ import { AppAdminComponentComponent } from './components/admin/app-admin-compone
 import { MainHeaderComponent } from './components/main-header/main-header.component';
 import { ProductosAdminComponent } from './components/admin/outlet/productos-admin/productos-admin.component';
 import { ClientesAdminComponent } from './components/admin/outlet/clientes-admin/clientes-admin.component';
+import { ProductoComponent } from './components/admin/outlet/items/producto/producto.component';
+import { CategoriasAdminComponent } from './components/admin/outlet/categorias-admin/categorias-admin.component';
+import { CategoriaComponent } from './components/admin/outlet/items/categoria/categoria.component';
+import { FacturasComponent } from './components/admin/outlet/facturas/facturas.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { ClientesAdminComponent } from './components/admin/outlet/clientes-admin
     AppAdminComponentComponent,
     MainHeaderComponent,
     ProductosAdminComponent,
-    ClientesAdminComponent
+    ClientesAdminComponent,
+    ProductoComponent,
+    CategoriasAdminComponent,
+    CategoriaComponent,
+    FacturasComponent,
   ],
   imports: [
     BrowserModule,
