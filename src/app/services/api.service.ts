@@ -106,5 +106,24 @@ export class ApiService {
       })
   }
 
+  // ------- Compras
+  getCompra(){
+    this.putHeaders();
+    return this.http.get(
+      this.url + 'Compras',
+      {
+        headers: this.headers = new HttpHeaders({
+          'Authorization': 'Bearer ' + localStorage.getItem('token')
+        })
+      })
+  }
+
+
+
+
+
+
+
+
 
 }

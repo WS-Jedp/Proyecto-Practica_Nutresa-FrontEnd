@@ -1,0 +1,32 @@
+<section class="d-flex flex-column justify-content-center align-items-center">
+
+<div *ngIf="isLoading; else showCategoriaClientes">
+  Cargando...
+</div>
+
+<ng-template #showCategoriaClientes>
+  <h2>{{cliente[0].categoria}}</h2>
+<article>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Marca</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">NIT</th>
+        <th scope="col">Valor de descuento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cliente; index as i">
+        <td>{{item.marca}}</td>
+        <td>{{item.telefono}}</td>
+        <td>{{item.NIT}}</td>
+        <td>{{item.valor}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+
+</ng-template>
+</section>

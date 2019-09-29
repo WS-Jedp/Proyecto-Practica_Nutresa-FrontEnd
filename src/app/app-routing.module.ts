@@ -10,10 +10,12 @@ import {ProductosAdminComponent} from '../app/components/admin/outlet/productos-
 import {ClientesAdminComponent} from '../app/components/admin/outlet/clientes-admin/clientes-admin.component';
 import {CategoriasAdminComponent} from '../app/components/admin/outlet/categorias-admin/categorias-admin.component';
 import {FacturasComponent} from '../app/components/admin/outlet/facturas/facturas.component';
+import {ComprasFormComponent} from '../app/components/admin/outlet/compras-form/compras-form.component';
 
 //Items
 import {ProductoComponent} from './components/admin/outlet/items/producto/producto.component';
 import {CategoriaComponent} from './components/admin/outlet/items/categoria/categoria.component';
+import {CategoriasClientesComponent} from './components/admin/outlet/items/categorias-clientes/categorias-clientes.component';
 import {ClienteComponent} from './components/admin/outlet/items/cliente/cliente.component';
 //Variable que permite las rutas dinamicas
 const routes: Routes = [
@@ -25,8 +27,10 @@ const routes: Routes = [
     {path:'productos/:id', component:ProductoComponent},
     {path: 'clientes', component: ClientesAdminComponent},
     {path: 'clientes/:id', component: ClienteComponent},
+    {path: 'compras', component:ComprasFormComponent},
     {path: 'categorias', component:CategoriasAdminComponent},
     {path: 'categorias/:id', component:CategoriaComponent},
+    {path: 'categorias/:id/clientes', component:CategoriasClientesComponent},
     {path: 'facturas', component: FacturasComponent},
     {path: '**', component: ProductosAdminComponent}
   ]},

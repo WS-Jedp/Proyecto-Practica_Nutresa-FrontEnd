@@ -23,6 +23,8 @@ import { CategoriasAdminComponent } from './components/admin/outlet/categorias-a
 import { CategoriaComponent } from './components/admin/outlet/items/categoria/categoria.component';
 import { FacturasComponent } from './components/admin/outlet/facturas/facturas.component';
 import { ClienteComponent } from './components/admin/outlet/items/cliente/cliente.component';
+import { CategoriasClientesComponent } from './components/admin/outlet/items/categorias-clientes/categorias-clientes.component';
+import { ComprasFormComponent } from './components/admin/outlet/compras-form/compras-form.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { ClienteComponent } from './components/admin/outlet/items/cliente/client
     CategoriaComponent,
     FacturasComponent,
     ClienteComponent,
+    CategoriasClientesComponent,
+    ComprasFormComponent,
   ],
   imports: [
     BrowserModule,

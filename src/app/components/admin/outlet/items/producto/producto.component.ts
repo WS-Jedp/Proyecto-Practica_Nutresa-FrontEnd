@@ -20,7 +20,12 @@ export class ProductoComponent implements OnInit {
   constructor(private productoApi:ProductoService, private route:ActivatedRoute) {
 
     this.isLoading = true;
-    this.idProducto = route.params.value.id;
+
+    this.route.params.subscribe(
+      (resp)=>{
+        this.idProducto = resp.id;
+      }
+    )
 
     productoApi.getProduct(this.idProducto).subscribe(
       (resp:OneProduct)=>{

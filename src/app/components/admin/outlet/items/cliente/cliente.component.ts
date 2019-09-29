@@ -14,7 +14,7 @@ export class ClienteComponent implements OnInit {
 
   isLoading:boolean;
 
-  id:number;
+  idCliente:number;
 
   Cliente:object;
 
@@ -22,9 +22,13 @@ export class ClienteComponent implements OnInit {
 
   this.isLoading = true;
 
-  this.id = this.route.params.value.id;
+  this.route.params.subscribe(
+    (resp)=>{
+      this.idCliente = resp.id;
+    }
+  )
 
-  this.apiService.getClient(this.id).subscribe(
+  this.apiService.getClient(this.idCliente).subscribe(
     (resp:ClienteInterface)=>{
       this.Cliente = resp.Cliente;
 

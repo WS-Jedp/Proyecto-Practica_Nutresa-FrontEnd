@@ -1,1 +1,36 @@
-<p>categoria works!</p>
+<section class="d-flex justify-content-center align-items-center w-100 flex-column">
+
+  <div *ngIf="isLoading; else showCategoria">
+    Cargando...
+  </div>
+
+  <ng-template #showCategoria>
+    <h2>CATEGORIAS</h2>
+    <article class="d-flex w-100 justify-content-center align-items-center">
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Valor del descuento</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{categoria.id}}</td>
+            <td>{{categoria.categoria}}</td>
+            <td>{{categoria.valor}}%</td>
+            <td>
+              <a routerLink="clientes">Ver clientes</a>
+              <a>Eliminar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <a class="btnAgregar">Regresar</a>
+  </ng-template>
+</section>
