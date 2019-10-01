@@ -28,7 +28,7 @@
               <td>{{item.cantidad}}</td>
               <td>
                 <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" >
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" (click)="comprarProducto(item.id)">
                 Comprar
               </button>
               </td>
@@ -51,7 +51,68 @@
         </button>
       </div>
       <div class="modal-body">
-        ...
+
+        <div *ngIf="loadingProducto; else showProductoModal">
+            Cargando producto...
+        </div>
+
+        <ng-template #showProductoModal>
+        <!-- Cuerpo del modal -->
+        <table class="table">
+          <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Cantidad</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{producto.id}}</td>
+              <td>{{producto.nombre}}</td>
+              <td>{{producto.precio}}</td>
+              <td>{{producto.marca}}</td>
+              <td>{{producto.cantidad}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <form class="d-flex flex-column">
+          <label for="cliente">Cliente:
+            <select class="clientes" name="client">
+              <option *ngFor="let client of clientes; index as i" value="{{client.id}}">{{client.marca}}</option>
+            </select>
+          </label>
+
+          <label for="cantidad">Cantidad a llevar:
+            <input type="number" name="cantidad">
+          </label>
+
+          <label for="tipo_factura">Tipo de Factura: <br>
+            Compra Directa
+          <input type="radio" name="tipo_factura" value="1" (click)="compraDirecta()">
+            Compra Combo
+          <input type="radio" name="tipo_factura" value="0" (click)="compraCombo()">
+          </label>
+
+            <!-- Compra Combo -->
+            <div *ngIf="combo">
+              <label for="nombreCombo">Nombre del combo
+                <input type="text" name="nombreCombo" value="nombreCombo">
+              </label>
+              <label for="descripcionCombo">Descripcion
+                <textarea name="descripcionCombo"  rows="8" cols="40"></textarea>
+              </label>
+              <label for="precioCombo">Precio del combo
+                <input type="number" name="precioCombo" value="precioCombo">
+              </label>
+            </div>
+          <input type="submit" name="enviar" value="Comprar">
+        </form>
+      </ng-template>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
