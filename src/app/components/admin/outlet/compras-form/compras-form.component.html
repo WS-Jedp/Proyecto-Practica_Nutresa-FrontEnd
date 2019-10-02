@@ -45,7 +45,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalCenterTitle">Generar Compra</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -99,8 +99,23 @@
 
             <!-- Compra Combo -->
             <div *ngIf="combo">
+              <hr>
+              <form action="index.html" method="post">
+                <label for="agregarProducto" class="d-flex flex-row">
+                  <select name="agregarProducto">
+                    <option *ngFor="let producto of compras; index as i" value="{{producto.id}}">{{producto.nombre}}</option>
+                  </select>
+                  <label for="cantidad2">Cantidad
+                    <input type="number" name="cantidad2">
+                  </label>
+                </label>
+                <button type="submit" class="btn btn-primary" name="button">Agregar Producto</button>
+              </form>
+              <hr>
+
+
               <label for="nombreCombo">Nombre del combo
-                <input type="text" name="nombreCombo" value="nombreCombo">
+                <input type="text" name="nombreCombo" placeholder=""="nombreCombo">
               </label>
               <label for="descripcionCombo">Descripcion
                 <textarea name="descripcionCombo"  rows="8" cols="40"></textarea>
