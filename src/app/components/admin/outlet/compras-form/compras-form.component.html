@@ -12,24 +12,22 @@
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Marca</th>
-              <th scope="col">Precio</th>
-              <th scope="col">Cantidad</th>
+              <th scope="col">Cliente</th>
+              <th scope="col">Telefono</th>
+              <th scope="col">NIT</th>
               <th scope="col">Acciones</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let item of compras; index as i">
+            <tr *ngFor="let cliente of clientes; index as i">
               <td>{{i+1}}</td>
-              <td>{{item.nombre}}</td>
-              <td>{{item.marca}}</td>
-              <td>{{item.precio}}</td>
-              <td>{{item.cantidad}}</td>
+              <td>{{cliente.marca}}</td>
+              <td>{{cliente.telefono}}</td>
+              <td>{{cliente.NIT}}</td>
               <td>
                 <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" (click)="comprarProducto(item.id)">
-                Comprar
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" (click)="comprarProducto(cliente.id)">
+                Realizar Compra
               </button>
               </td>
             </tr>
@@ -45,15 +43,15 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Generar Compra</h5>
+        <h5 class="modal-title" id="exampleModalCenterTitle" *ngIf="clienteCompra">Generar Compra para {{clienteCompra.marca}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
 
+      <div class="modal-body">
         <div *ngIf="loadingProducto; else showProductoModal">
-            Cargando producto...
+            Cargando productos...
         </div>
 
         <ng-template #showProductoModal>
@@ -66,62 +64,59 @@
                 <th scope="col">Precio</th>
                 <th scope="col">Marca</th>
                 <th scope="col">Cantidad</th>
+                <th scope="col">Cantidad a llevar</th>
               </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>{{producto.id}}</td>
+            <tr *ngFor="let producto of listaProductos; index as i">
+              <td>{{i + 1}}</td>
               <td>{{producto.nombre}}</td>
               <td>{{producto.precio}}</td>
               <td>{{producto.marca}}</td>
               <td>{{producto.cantidad}}</td>
+              <td>{{producto.cantidadLlevar}}</td>
             </tr>
           </tbody>
         </table>
 
-        <form class="d-flex flex-column">
-          <label for="cliente">Cliente:
-            <select class="clientes" name="client">
-              <option *ngFor="let client of clientes; index as i" value="{{client.id}}">{{client.marca}}</option>
-            </select>
-          </label>
 
-          <label for="cantidad">Cantidad a llevar:
-            <input type="number" name="cantidad">
-          </label>
+        <form class="d-flex flex-column" method="post" #dataAll="ngForm" (ngSubmit)="comprar(dataAll)">
+              <!-- Agregar producto -->
+              <form method="post" #data="ngForm" (ngSubmit)="addProduct(data)" id="addProducto">
+                <label for="cliente">Productos:
+                  <select class="productos" ngModel name="producto">
+                    <option *ngFor="let producto of productos; index as i"  value="{{producto.id}}">{{producto.nombre}}</option>
+                  </select>
+                </label>
+
+                <label for="cantidadLlevar">Cantidad a llevar:
+                  <input type="number" ngModel name="cantidadLlevar">
+                </label>
+
+                <label for="agregarProducto">
+                  <button type="submit" class="btn btn-primary" id="addProductoBtn">Agregar Producto</button>
+                </label>
+              </form>
+
 
           <label for="tipo_factura">Tipo de Factura: <br>
             Compra Directa
-          <input type="radio" name="tipo_factura" value="1" (click)="compraDirecta()">
+          <input type="radio" ngModel name="tipo_factura" value="{{1}}" (click)="compraDirecta()">
             Compra Combo
-          <input type="radio" name="tipo_factura" value="0" (click)="compraCombo()">
+          <input type="radio" ngModel name="tipo_factura" value="{{0}}" (click)="compraCombo()">
           </label>
 
             <!-- Compra Combo -->
             <div *ngIf="combo">
-              <hr>
-              <form action="index.html" method="post">
-                <label for="agregarProducto" class="d-flex flex-row">
-                  <select name="agregarProducto">
-                    <option *ngFor="let producto of compras; index as i" value="{{producto.id}}">{{producto.nombre}}</option>
-                  </select>
-                  <label for="cantidad2">Cantidad
-                    <input type="number" name="cantidad2">
-                  </label>
-                </label>
-                <button type="submit" class="btn btn-primary" name="button">Agregar Producto</button>
-              </form>
-              <hr>
-
 
               <label for="nombreCombo">Nombre del combo
-                <input type="text" name="nombreCombo" placeholder=""="nombreCombo">
+                <input type="text" ngModel name="nombreCombo" placeholder="nombreCombo">
               </label>
               <label for="descripcionCombo">Descripcion
-                <textarea name="descripcionCombo"  rows="8" cols="40"></textarea>
+                <textarea ngModel name="descripcionCombo"  rows="8" cols="40"></textarea>
               </label>
               <label for="precioCombo">Precio del combo
-                <input type="number" name="precioCombo" value="precioCombo">
+                <input type="number" ngModel name="precioCombo" value="precioCombo">
               </label>
             </div>
           <input type="submit" name="enviar" value="Comprar">
@@ -130,7 +125,7 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cancelarCompra()">Cancelar</button>
         <button type="button" class="btn btn-primary">Comprar</button>
       </div>
     </div>
