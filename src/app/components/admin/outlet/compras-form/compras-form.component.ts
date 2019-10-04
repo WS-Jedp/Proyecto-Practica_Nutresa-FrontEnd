@@ -121,7 +121,7 @@ export class ComprasFormComponent implements OnInit {
       this.allBuy.push(Object.assign(this.howMany, this.whichBuy));
       console.log('data all', this.allBuy);
 
-      this.postCopmpra.comprarProducto(dataAll).subscribe(
+      this.postCopmpra.comprarProducto(this.allBuy).subscribe(
         (resp)=>{
           console.log('compra directa hecha', resp);
         }
